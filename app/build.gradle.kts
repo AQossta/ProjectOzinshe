@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.ozinsheexample"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.ozinsheexample"
@@ -55,4 +55,7 @@ dependencies {
     // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    implementation ("com.tbuonomo:dotsindicator:4.2")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
 }
