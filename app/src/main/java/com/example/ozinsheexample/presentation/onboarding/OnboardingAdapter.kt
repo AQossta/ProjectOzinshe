@@ -15,7 +15,7 @@ class OnboardingAdapter(): RecyclerView.Adapter<OnboardingAdapter.OnboardingView
         notifyDataSetChanged()
     }
 
-    inner class OnboardingViewHolder(private val binding:ItemViewpagerOnboardingBinding): RecyclerView.ViewHolder(binding.root){
+    inner class OnboardingViewHolder(private val binding:ItemViewpagerOnboardingBinding):RecyclerView.ViewHolder(binding.root){
         fun bindItem(onboardingModel: OnboardingModel){
             binding.tvTitleOnboarding.text = onboardingModel.title
             binding.tvDiscriptionOnboarding.text = onboardingModel.description
