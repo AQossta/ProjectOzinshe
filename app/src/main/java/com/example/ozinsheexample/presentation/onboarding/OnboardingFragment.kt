@@ -15,7 +15,6 @@ import com.example.ozinsheexample.databinding.FragmentOnboardingBinding
 
 class OnboardingFragment : Fragment() {
 
-//    private lateinit var ViewPager: ViewPager2
     private lateinit var binding: FragmentOnboardingBinding
 
     override fun onCreateView(
