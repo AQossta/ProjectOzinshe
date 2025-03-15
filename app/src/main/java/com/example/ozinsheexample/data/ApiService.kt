@@ -5,6 +5,7 @@ import com.example.ozinsheexample.data.model.login.LoginResponse
 import com.example.ozinsheexample.data.model.register.RegistrationRequest
 import com.example.ozinsheexample.data.model.register.RegistrationResponce
 import com.example.ozinsheexample.presentation.home.mainresponse.MainMoviesResponse
+import com.example.ozinsheexample.presentation.home.mainresponse.modelmain.MoviesByCategoryMainModel
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -19,4 +20,7 @@ interface ApiService {
 
     @POST("/auth/V1/signup")
     suspend fun registerUser(@Body request: RegistrationRequest): RegistrationResponce
+
+    @GET("/core/V1/movies/main")
+    suspend fun getMainMovieByCategory(@Header("Authorization") token: String): MoviesByCategoryMainModel
 }
