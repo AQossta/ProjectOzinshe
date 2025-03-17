@@ -1,6 +1,5 @@
-package com.example.ozinsheexample.presentation
+package com.example.ozinsheexample.presentation.splash
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.ozinsheexample.R
 import com.example.ozinsheexample.data.SharedProvider
 import com.example.ozinsheexample.databinding.FragmentHomeBinding
@@ -38,7 +39,14 @@ class HomeFragment : Fragment() {
         val token = SharedProvider(requireContext()).getToken()
         viewModel.getMainMovies(token)
         val adapterMainMovie = MainMovieAdapter()
-        binding.rcMainMovies.adapter = MainMovieAdapter()
+        binding.rcMainMovies.adapter = adapterMainMovie
+        adapterMainMovie.setOnMovieClickListener(object :RcViewItemClickMainMoviesCallback{
+            override fun onClick(movieId: Int) {
+                val action = HomeFragmentDirections.actionHomeFragmentToAboutFragment(movieId)
+                findNavController().navigate(action)
+            }
+
+        })
         viewModel.mainMoviesResponse.observe(viewLifecycleOwner) {
             adapterMainMovie.sumbitList(it)
         }
