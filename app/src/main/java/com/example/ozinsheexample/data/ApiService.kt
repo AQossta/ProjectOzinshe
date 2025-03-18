@@ -5,6 +5,7 @@ import com.example.ozinsheexample.data.model.login.LoginRequest
 import com.example.ozinsheexample.data.model.login.LoginResponse
 import com.example.ozinsheexample.data.model.register.RegistrationRequest
 import com.example.ozinsheexample.data.model.register.RegistrationResponce
+import com.example.ozinsheexample.presentation.about.videorespose.VideoResponse
 import com.example.ozinsheexample.presentation.home.mainresponse.MainMoviesResponse
 import com.example.ozinsheexample.presentation.home.mainresponse.MainMoviesResponseItem
 import com.example.ozinsheexample.presentation.home.mainresponse.modelmain.MoviesByCategoryMainModel
@@ -31,4 +32,9 @@ interface ApiService {
     suspend fun getMoviesById(
         @Header("Authorization") token: String,
         @Path("id") id: Int): MovieByIdResponse
+
+    @GET("/core/V1/seasons/{Id}")
+    suspend fun getSeries(
+        @Header("Authorization") token: String,
+        @Path("id") id: Int): List<VideoResponse>
 }

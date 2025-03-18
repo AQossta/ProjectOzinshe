@@ -1,9 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    // Kotlin serialization plugin for type safe routes and navigation arguments
-    kotlin("plugin.serialization") version "2.0.21"
-    id("androidx.navigation.safeargs.kotlin") version "2.7.7"
+    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.navigationSafeArgs)
+
 }
 
 android {
@@ -78,4 +77,8 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
 
     implementation ("com.github.bosphere.android-fadingedgelayout:fadingedgelayout:1.0.0")
+
+    implementation ("com.github.chrisbanes:PhotoView:2.3.0")
+
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0")  
 }

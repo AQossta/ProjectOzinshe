@@ -53,6 +53,12 @@ class HomeFragment : Fragment() {
 
         viewModel.getMoviesByCategoryMain(token)
         val adapterMoviesByCategory1 = MoviesByCategoryMainAdapter()
+        adapterMoviesByCategory1.setOnMovieClickListener(object :RcViewItemClickMainMoviesCallback{
+            override fun onClick(movieId: Int) {
+                val action = HomeFragmentDirections.actionHomeFragmentToAboutFragment(movieId)
+                findNavController().navigate(action)
+            }
+        })
         viewModel.moviesByCategoryMainModel.observe(viewLifecycleOwner) {
             binding.rcMainCategories1.adapter = adapterMoviesByCategory1
             binding.tvCategoryTitle1Text.text = it[0].categoryName
@@ -61,6 +67,12 @@ class HomeFragment : Fragment() {
 
         viewModel.getMoviesByCategoryMain(token)
         val adapterMoviesByCategory2 = MoviesByCategoryMainAdapter()
+        adapterMoviesByCategory2.setOnMovieClickListener(object :RcViewItemClickMainMoviesCallback{
+            override fun onClick(movieId: Int) {
+                val action = HomeFragmentDirections.actionHomeFragmentToAboutFragment(movieId)
+                findNavController().navigate(action)
+            }
+        })
         viewModel.moviesByCategoryMainModel.observe(viewLifecycleOwner) {
             binding.rcMainCategories2.adapter = adapterMoviesByCategory2
             binding.tvCategoryTitle2Text.text = it[1].categoryName
@@ -69,6 +81,12 @@ class HomeFragment : Fragment() {
 
         viewModel.getMoviesByCategoryMain(token)
         val adapterMoviesByCategory3 = MoviesByCategoryMainAdapter()
+        adapterMoviesByCategory3.setOnMovieClickListener(object :RcViewItemClickMainMoviesCallback{
+            override fun onClick(movieId: Int) {
+                val action = HomeFragmentDirections.actionHomeFragmentToAboutFragment(movieId)
+                findNavController().navigate(action)
+            }
+        })
         viewModel.moviesByCategoryMainModel.observe(viewLifecycleOwner) {
             binding.rcMainCategories3.adapter = adapterMoviesByCategory3
             binding.tvCategoryTitle3Text.text = it[2].categoryName
