@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OzinsheExample</string>
+    <string name="profile_language">Language</string>
+    <string name="profile_my_profile">My profile</string>
+    <string name="personal_data">Personal data</string>
+    <string name="change_your_password">Update password</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="Profile">Profile</string>
+    <string name="edit">Edit</string>
+    <string name="trends">Trends</string>
+    <string name="total_vides">All</string>
+    <string name="series_videos">Series</string>
+    <string name="screenshots">Screenshots</string>
+    <string name="related_series">Related TV Series</string>
+    <string name="director_rezhisser">Director:</string>
+    <string name="producer">Producer:</string>
+    <string name="read_more">Read more</string>
+    <string name="add_to_list">Add to list</string>
+    <string name="share">Share</string>
+</resources>

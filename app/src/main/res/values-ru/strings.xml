@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OzinsheExample</string>
+    <string name="profile_language">Язык</string>
+    <string name="profile_my_profile">Мой профиль</string>
+    <string name="personal_data">Личные данные</string>
+    <string name="change_your_password">Сменить пароль</string>
+    <string name="terms_and_conditions">Правила и условия</string>
+    <string name="dark_mode">Темный режим</string>
+    <string name="Profile">Профиль</string>
+    <string name="edit">Править</string>
+    <string name="trends">Тренды</string>
+    <string name="total_vides">"Все "</string>
+    <string name="series_videos">Серии</string>
+    <string name="screenshots">Скриншоты</string>
+    <string name="related_series">Похожие сериалы</string>
+    <string name="director_rezhisser">Режиссер:</string>
+    <string name="producer">Продюсер:</string>
+    <string name="read_more">Подробнее</string>
+    <string name="add_to_list">Добавить в список</string>
+    <string name="share">Поделиться</string>
+</resources>

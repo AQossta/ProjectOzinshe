@@ -30,7 +30,7 @@
         android:id="@+id/tvProfileTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Профиль"
+        android:text="@string/Profile"
         android:fontFamily="@font/sf_bold_700"
         android:textSize="16dp"
         android:textColor="@color/grey_900"
