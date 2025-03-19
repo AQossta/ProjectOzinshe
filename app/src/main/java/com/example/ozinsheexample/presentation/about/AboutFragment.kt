@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.ozinsheexample.R
 import com.example.ozinsheexample.data.SharedProvider
+import com.example.ozinsheexample.data.model.MovieIdModel
 import com.example.ozinsheexample.databinding.FragmentAboutBinding
 import com.example.ozinsheexample.provideNavigationHost
 
@@ -20,6 +21,7 @@ class AboutFragment : Fragment() {
     private lateinit var binding: FragmentAboutBinding
     private val args: AboutFragmentArgs by navArgs()
     private val viewModel: AboutViewModel by viewModels()
+    private var favoriteState: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,7 +50,7 @@ class AboutFragment : Fragment() {
         viewModel.moviesByIdResponse.observe(viewLifecycleOwner){
             binding.btnPlay.setOnClickListener{ click ->
                 if(it.video != null){
-                    val action = AboutFragmentDirections.actionAboutFragmentToVideoFragment(it.video?.link?:"")
+                    val action = AboutFragmentDirections.actionAboutFragmentToVideoFragment(it.video.link)
                     findNavController().navigate(action)
                 }else{
                     val action = AboutFragmentDirections.actionAboutFragmentToSeriesFragment(args.movieId)
@@ -81,6 +83,13 @@ class AboutFragment : Fragment() {
             binding.run {
                 btnBack.setOnClickListener {
                     requireActivity().onBackPressed()
+                }
+                if(it.favorite){
+                    favoriteState = true
+                    btnIconFavorite.background = resources.getDrawable(R.drawable.ic_favorite_selected, null)
+                }else{
+                    favoriteState = false
+                    btnIconFavorite.background = resources.getDrawable(R.drawable.ic_favorite_unselected, null)
                 }
                 textTvTittleMovie.text = it.name
                 textTvAdditionalInfoYear.text = it.year.toString()
@@ -128,7 +137,28 @@ class AboutFragment : Fragment() {
                     btnNextAllMovie.visibility = View.GONE
                 }
             }
+            binding.btnFavorite.setOnClickListener{ click ->
+                Log.d("AAA", "onViewCreated: ${favoriteState}")
+                if(!favoriteState){
+                    Log.d("AAA", "onViewCreated: add")
+                    viewModel.addFavorite(token, MovieIdModel(args.movieId))
+                }else{
+                    Log.d("AAA", "onViewCreated: delete")
+                    viewModel.deleteFavorite(token, MovieIdModel(args.movieId))
+                }
+            }
         }
+
+        viewModel.favoriteState.observe(viewLifecycleOwner){
+            if(it){
+                favoriteState = true
+                binding.btnIconFavorite.background = resources.getDrawable(R.drawable.ic_favorite_selected, null)
+            }else{
+                favoriteState = false
+                binding.btnIconFavorite.background = resources.getDrawable(R.drawable.ic_favorite_unselected, null)
+            }
+        }
+
         viewModel.errorResponse.observe(viewLifecycleOwner){
             Log.d("AAA", it)
         }
