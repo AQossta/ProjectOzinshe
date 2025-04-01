@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.viewModels
@@ -45,6 +46,17 @@ class ProfileFragment : Fragment(), OnLanguageSelectedListener {
             val bottomSheet = SelectLanguageBottomSheet()
             bottomSheet.setOnLanguageSelectedListener(this)
             bottomSheet.show(parentFragmentManager, bottomSheet.tag)
+        }
+
+        binding.run {
+            switchDayNight.isChecked = SharedProvider(requireContext()).getDayMode()
+            switchDayNight.setOnCheckedChangeListener { _, isChecked ->
+                SharedProvider(requireContext()).saveDayMode(isChecked)
+                AppCompatDelegate.setDefaultNightMode(
+                    if (isChecked) AppCompatDelegate.MODE_NIGHT_YES
+                    else AppCompatDelegate.MODE_NIGHT_NO
+                )
+            }
         }
     }
 

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="64dp"
+    android:background="?attr/colorPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageButton
@@ -33,7 +34,7 @@
         android:text="@string/Profile"
         android:fontFamily="@font/sf_bold_700"
         android:textSize="16dp"
-        android:textColor="@color/grey_900"
+        android:textColor="?attr/colorTertiary"
         app:layout_constraintStart_toEndOf="@id/btnBackProfile"
         app:layout_constraintEnd_toStartOf="@id/btnExit"
         app:layout_constraintTop_toTopOf="parent"

@@ -2,6 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -80,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/personal_data"
                 android:fontFamily="@font/sf_medium_500"
-                android:textColor="@color/grey_800"
+                android:textColor="?attr/colorTertiary"
                 android:textSize="16dp"
                 android:layout_gravity="center_vertical"/>
             <TextView
@@ -119,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/change_your_password"
                 android:fontFamily="@font/sf_medium_500"
-                android:textColor="@color/grey_800"
+                android:textColor="?attr/colorTertiary"
                 android:textSize="16dp"
                 android:layout_gravity="center_vertical"/>
 
@@ -150,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/profile_language"
                 android:fontFamily="@font/sf_medium_500"
-                android:textColor="@color/grey_800"
+                android:textColor="?attr/colorTertiary"
                 android:textSize="16dp"
                 android:layout_gravity="center_vertical"/>
             <TextView
@@ -190,7 +191,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/terms_and_conditions"
                 android:fontFamily="@font/sf_medium_500"
-                android:textColor="@color/grey_800"
+                android:textColor="?attr/colorTertiary"
                 android:textSize="16dp"
                 android:layout_gravity="center_vertical"/>
 
@@ -221,17 +222,21 @@
                 android:layout_height="wrap_content"
                 android:text="@string/dark_mode"
                 android:fontFamily="@font/sf_medium_500"
-                android:textColor="@color/grey_800"
+                android:textColor="?attr/colorTertiary"
                 android:textSize="16dp"
                 android:layout_gravity="center_vertical"/>
-            <com.google.android.material.materialswitch.MaterialSwitch
+
+            <com.kyleduo.switchbutton.SwitchButton
                 android:id="@+id/switchDayNight"
                 android:layout_width="67dp"
                 android:layout_height="36dp"
-                android:checked="true"
+                android:checked="false"
+                android:layout_marginEnd="-10dp"
+                style="@style/customSwitchButton"
                 android:layout_gravity="center_vertical"
-                android:backgroundTint="@color/primary_500"
-                app:thumbTint="@color/white"/>
+                app:kswBackColor="?attr/colorSwitchThumbNormal"
+                app:kswThumbColor="@color/white"
+                app:thumbTint="@color/primary_300"/>
 
         </LinearLayout>
 
